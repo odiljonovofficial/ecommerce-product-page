@@ -47,3 +47,20 @@ elsImgShowcaseThumbnailButton.forEach(function (elButton) {
     elImgShowcaseActiveImg.srcset = `${elButton.dataset.imgShowcaseBig} 1x, ${elButton.dataset.imgShowcaseRetina} 2x`;
   });
 });
+
+// LIGHTBOX
+const elLightbox = document.querySelector(".lightbox");
+const elLightboxToggler = document.querySelector(".js-lightbox-toggler");
+const elLightboxClose = document.querySelector(".lightbox__close");
+
+if (elLightboxToggler) {
+  elLightboxToggler.addEventListener("click", function () {
+    elLightbox.classList.add(modifiers.lightboxOpen);
+  });
+}
+
+if (elLightboxClose) {
+  elLightboxClose.addEventListener("click", function () {
+    elLightbox.classList.remove(modifiers.lightboxOpen);
+  });
+}
